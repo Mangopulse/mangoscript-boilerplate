@@ -56,6 +56,7 @@ npx tsc --init
 
 # Step 2: Setup Folder Structure for API
 
+```
 api/
 │
 ├── src/
@@ -73,3 +74,10 @@ api/
 ├── migrations/             # Database migrations
 │
 ├── .env                    # Environment variables (e.g., DATABASE
+```
+
+## Step 1: Set up the database
+
+```bash
+npx knex migrate:make create_users_table --knexfile knexfile.ts --env development
+```
