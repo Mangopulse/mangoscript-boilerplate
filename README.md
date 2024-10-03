@@ -78,6 +78,32 @@ api/
 
 ## Step 1: Set up the database
 
+### Create the migration for the users table
+
 ```bash
 npx knex migrate:make create_users_table --knexfile knexfile.ts --env development
+```
+
+### Run the migration to create the table:
+
+```bash
+npx knex migrate:latest --knexfile knexfile.ts --env development
+
+```
+
+This will apply the migration and create the users table in your dev.sqlite3 file.
+
+# Step 2: Running the Application
+
+Error handling
+Since koa-bodyparser doesn't have built-in TypeScript type definitions, you need to install the type definitions separately using @types/koa-bodyparser.
+
+```bash
+npm install --save-dev @types/koa-bodyparser
+npm install bcrypt
+npm install --save-dev @types/bcrypt
+```
+
+```bash
+npm run start
 ```
