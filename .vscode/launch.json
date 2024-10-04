@@ -1,20 +1,24 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Run API",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\api\\src\\app.ts",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
-        }
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Run API with ts-node",
+        "runtimeArgs": [
+          "-r",
+          "ts-node/register"
+        ],
+        "envFile": "${workspaceFolder}/.env",  // Ensure this line is present
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "program": "${workspaceFolder}/api/src/app.ts",  // Path to your TypeScript entry file
+        "cwd": "${workspaceFolder}",
+        "outFiles": [
+          "${workspaceFolder}/**/*.js"
+        ]
+      }
     ]
-}
+  }
+  

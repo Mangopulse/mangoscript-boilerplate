@@ -28,6 +28,7 @@ export default class AuthService {
     try {
       return jwt.verify(token, JWT_SECRET);
     } catch (error) {
+      console.log(error)
       throw new Error('Invalid or expired token');
     }
   }

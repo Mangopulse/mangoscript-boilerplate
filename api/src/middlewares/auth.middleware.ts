@@ -16,6 +16,7 @@ export const authMiddleware = async (ctx: Context, next: Next) => {
     ctx.state.user = decoded; // Attach the user info to the context
     await next();
   } catch (err) {
+    console.log(err);
     ctx.status = 401;
     ctx.body = { error: 'Invalid or expired token' };
   }
