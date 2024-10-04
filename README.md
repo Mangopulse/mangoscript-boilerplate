@@ -107,3 +107,7 @@ npm install --save-dev @types/bcrypt
 ```bash
 npm run start
 ```
+
+
+npx knex migrate:latest --env development
+npx knex seed:run
